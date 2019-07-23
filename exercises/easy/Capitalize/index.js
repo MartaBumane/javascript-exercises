@@ -11,6 +11,11 @@
  * capitalize('look, it is working!') === 'Look, It Is Working!'
  */
 
-function capitalize(str) {}
+function capitalize(str) {
+
+    return str.replace(/\b\w/g, l => l.toUpperCase())
+
+}
+
 
 module.exports = capitalize;

@@ -11,6 +11,19 @@
  *  - price
  */
 
-function sales(carsSold) {}
+function sales(carsSold) {
+    let totals = {};
+    for (let i in carsSold){
+        let car = carsSold[i];
+        if(totals[car.make]== undefined){
+            totals[car.make]=0;
+        }
+        
+        totals[car.make]+= car.price; 
+    }
+
+    return totals;
+}
+
 
 module.exports = sales;

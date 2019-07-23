@@ -10,6 +10,13 @@
  * isEven(3) === false
  */
 
-function isEven(n) {}
+function isEven(n) {
+    if(n&1 === 1){
+        return false;
+    }else{
+        return true;
+    }
+}
+
 
 module.exports = isEven;
