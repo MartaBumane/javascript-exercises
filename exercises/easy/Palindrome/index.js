@@ -13,6 +13,22 @@
  * palindrome("abcdefg") === false
  */
 
-function palindrome(str) {}
+function palindrome(str) {
+    // let charCount = str.length;
+ 
+    // for (let i = 0; i < charCount/2; i++) {
+    //     if (str[i] !== str[charCount - 1 - i]){
+    //         return false;
+    //     }
+    // }  
+    // return true;
+    let reverseStirng = str.split("").reverse().join("");
+    if(str === reverseStirng){
+        return true;
+    }else{
+        return false;
+    }
+
+}
 
 module.exports = palindrome;

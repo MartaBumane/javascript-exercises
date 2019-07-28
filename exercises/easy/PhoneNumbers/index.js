@@ -32,7 +32,51 @@ class PhoneNumber {
     this.input = input;
   }
 
-  number() {}
+  number() {
+    let input = this.input;
+    let output = '';
+    
+    for (let i in input) {
+      let symbol = input[i];
+      let asInteger = parseInt(symbol);
+      let isNumber = !isNaN(symbol);
+
+       if(!isNaN(asInteger)&&isNumber){
+         output+= symbol;
+       }         
+    }
+
+    if(output.length<10){
+      return null;
+    }
+
+    if(output.length===11&& output.charAt(0)!=='1'){
+      return null;
+    }
+
+    if(output.length>11){
+      return null;
+    }
+    
+    if(output.length===11){
+      output = output.substr(1);
+    }
+
+    if((output.length===10&&output.charAt(0)==='0')||(output.length===10&&output.charAt(0)==='1')){
+      return null;
+    }else if((output.length===11&&output.charAt(1)==='0')||(output.length===11&&output.charAt(1)==='1')){
+      return null;
+    }
+
+    if((output.length===10&&output.charAt(3)==='0')||(output.length===10&&output.charAt(3)==='1')){
+      return null;
+    }else if((output.length===11&&output.charAt(4)==='0')||(output.length===11&&output.charAt(4)==='1')){
+      return null;
+    }
+
+    return output;
+  }
 }
+
 
 module.exports = PhoneNumber;

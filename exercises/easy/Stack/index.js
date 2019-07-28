@@ -14,6 +14,27 @@
  * s.pop(); // returns 1
  */
 
-class Stack {}
+class Stack {
+    constructor(){
+        this.numbers= [];
+    }
+
+    push(num){
+        this.numbers.push(num);
+    }
+ 
+    pop(){
+        return this.numbers.pop();
+    }
+
+    peek(){
+        return this.numbers[this.numbers.length-1];
+
+    }
+
+
+
+}
+
 
 module.exports = Stack;

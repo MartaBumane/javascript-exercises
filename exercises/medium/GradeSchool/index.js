@@ -17,3 +17,42 @@
  *
  * Note that all our students only have one name. (It's a small town, what do you want?)
  */
+
+class GradeSchool{
+    constructor(){
+          this._rosterOb = {};
+    }
+
+
+
+    roster(){
+      return Object.keys(this._rosterOb).reduce((acc, key) => {
+        acc[key] = this._rosterOb[key].concat();
+        return acc;
+      }, {});
+    }
+
+    add(studentName, grade){
+      let gradeName = grade.toString();
+      
+      if(!this._rosterOb[gradeName]){
+        this._rosterOb[gradeName] = [];
+      }
+        
+      this._rosterOb[gradeName].push(studentName);
+      this._rosterOb[gradeName] = this._rosterOb[gradeName].sort();
+    }
+
+      grade( numb){
+        if("undefined" === typeof(this._rosterOb[numb.toString()])){
+            return [];
+        } else {
+        const toReturn =  this._rosterOb[numb.toString()];
+          return Array.from(toReturn).sort();
+        }
+     }
+      
+      
+  }
+
+  module.exports = GradeSchool;

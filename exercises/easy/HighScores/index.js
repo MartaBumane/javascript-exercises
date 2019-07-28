@@ -9,11 +9,31 @@ class HighScores {
     this.scores = input;
   }
 
-  get latest() {}
+  get latest() {
+    return this.scores[this.scores.length - 1];
+  }
 
-  get personalBest() {}
+  get personalBest() {
+    let bestScore= 0;
 
-  get personalTopThree() {}
+    for(let i = 0; i<this.scores.length;i++){
+      let currentScore = this.scores[i];
+
+      if (currentScore>bestScore){
+          bestScore = currentScore;
+      }
+    }
+    return bestScore;
+  }
+    
+
+  get personalTopThree() {
+    let arraySorted = this.scores.sort(function(a, b){return a-b});
+    let returnableArray = [];
+
+    returnableArray = (arraySorted.slice(-3));
+
+    return returnableArray.reverse();
+  }
 }
-
 module.exports = HighScores;
