@@ -1,6 +1,8 @@
 # JavaScript Exercises
+Javascript basics using TDD (jest) to train logical thinking!
 
-## Getting started
+
+## Tasks
 
 1. Create a new repository in your github account called `javascript-exercises`
 
